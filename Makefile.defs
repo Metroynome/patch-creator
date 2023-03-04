@@ -48,5 +48,5 @@ patch.bin:
 clean:
 	rm -f *.irx *.o
 
-include $(CURDIR)/Makefile.pref
-include $(CURDIR)/Makefile.eeglobal
+include ./Makefile.pref
+include ./Makefile.eeglobal

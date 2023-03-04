@@ -5,4 +5,4 @@ PATCH_TEMPLATE = template/patch-template-deadlocked.bin
 
 EE_DEFS = -DNTSC
 
-include ./Makefile.defs
+include Makefile.defs
