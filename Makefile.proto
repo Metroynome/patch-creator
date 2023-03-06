@@ -1,0 +1,8 @@
+REGION_DIR = DL-Prototype/
+EE_ELF = main-proto.elf
+EE_BIN = main-proto.bin
+PATCH_TEMPLATE = template/patch-template-proto.bin
+
+EE_DEFS = -DPROTOTYPE
+
+include Makefile.defs

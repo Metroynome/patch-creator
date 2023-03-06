@@ -1,11 +1,21 @@
 #include <tamtypes.h>
 
-#define DNAS_BYPASS (*(u8*)0x00498CB0)
+#if PROTOTYPE // if Prototype
+#define DNAS_BYPASS (0x00498830)
+#elif !NTSC_J // else if anything but NTSC-J
+#define DNAS_BYPASS (0x00498CB0)
+#else // else (leaves only NTSC=J)
+#define DNAS_BYPASS (0)
+#endif
 
-#if GLADIATOR
-#define FRAMELIMITER (*(u32*)0x0021DFE8)
-#else
+#if DEADLOCKED // Can also use: NTSC_U
 #define FRAMELIMITER (*(u32*)0x0021DF60)
+#elif GLADIATOR // Can also use: PAL
+#define FRAMELIMITER (*(u32*)0x0021DFE8)
+#elif PROTOTYPE
+#define FRAMELIMITER (*(u32*)0x0021E160)
+#elif GIRIGIRI // Can also use: NTSC_J
+#define FRAMELIMITER (*(u32*)0x00238768)
 #endif
 
 int main(void)
@@ -16,10 +26,10 @@ int main(void)
 	((void (*)(void))0x001270C0)();
 
 	// DNAS Bypass (For NTSC and PAL)
-	if (DNAS_BYPASS == 7 || DNAS_BYPASS == 6)
-		DNAS_BYPASS = 5;
+	if (DNAS_BYPASS != 0 && (*(u8*)DNAS_BYPASS == 7 || *(u8*)DNAS_BYPASS == 6))
+		*(u8*)DNAS_BYPASS = 5;
 
-	// Disable Framelimiter (PAL)
+	// Disable Framelimiter
 	if (FRAMELIMITER == 0x1e)
 		FRAMELIMITER = 0x3c;
 

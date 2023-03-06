@@ -1,0 +1,8 @@
+REGION_DIR = NTSC-J/
+EE_ELF = main-ntscj.elf
+EE_BIN = main-ntscj.bin
+PATCH_TEMPLATE = template/patch-template-ntscj.bin
+
+EE_DEFS = -DNTSC_J -DGIRIGIRI
+
+include Makefile.defs
