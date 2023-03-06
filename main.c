@@ -2,6 +2,12 @@
 
 #define DNAS_BYPASS (*(u8*)0x00498CB0)
 
+#if GLADIATOR
+#define FRAMELIMITER (*(u32*)0x0021DFE8)
+#else
+#define FRAMELIMITER (*(u32*)0x0021DF60)
+#endif
+
 int main(void)
 {
 	// This is the Same for NTSC and PAL
@@ -14,12 +20,8 @@ int main(void)
 		DNAS_BYPASS = 5;
 
 	// Disable Framelimiter (PAL)
-	if (*(u32*)0x0021DFE8 == 0x1e)
-		*(u32*)0x0021DFE8 = 0x3c;
-
-	// Disable Framelimiter (NTSC)
-	if (*(u32*)0x0021DF60 == 0x1e)
-		*(u32*)0x0021DF60 = 0x3c;
+	if (FRAMELIMITER == 0x1e)
+		FRAMELIMITER = 0x3c;
 
 	return 0;
 }

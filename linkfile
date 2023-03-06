@@ -14,18 +14,13 @@
 ENTRY(_start);
 
 SECTIONS {
-#ifdef _PROGRAM_ENTRY
-	.text _PROGRAM_ENTRY: {
-#else
-	.text 0x000F0000: {
-#endif
+	.text 0x01dff000: {
 		_ftext = . ;
 		*(.text)
-#ifdef _CONFIG
 		KEEP(*(.config))
-#endif
 		*(.text.*)
 		*(.gnu.linkonce.t*)
+		QUAD(0)
 	}
 
 
@@ -35,13 +30,13 @@ SECTIONS {
 	.reginfo : { *(.reginfo) }
 
 	/* Static data.  */
-	.rodata ALIGN(16): {
+	.rodata ALIGN(128): {
 		*(.rodata)
 		*(.rodata.*)
 		*(.gnu.linkonce.r*)
 	}
 
-	.data ALIGN(16): {
+	.data ALIGN(128): {
 		_fdata = . ;
 		*(.data)
 		*(.data.*)
@@ -49,31 +44,11 @@ SECTIONS {
 		SORT(CONSTRUCTORS)
 	}
 
-	.sdata ALIGN(16): {
+	.sdata ALIGN(128): {
 		*(.sdata)
 		*(.sdata.*)
 		*(.gnu.linkonce.s*)
 	}
-
-	_edata = .;
-	PROVIDE(edata = .);
-
-	/* Uninitialized data.  */
-	.sbss ALIGN(16) : {
-		_fbss = . ;
-		*(.sbss)
-		*(.sbss.*)
-		*(.gnu.linkonce.sb*)
-		*(.scommon)
-	}
-
-	.bss ALIGN(16) : {
-		*(.bss)
-		*(.bss.*)
-		*(.gnu.linkonce.b*)
-		*(COMMON)
-	}
-	_end_bss = .;
 
 	_end = . ;
 	PROVIDE(end = .);

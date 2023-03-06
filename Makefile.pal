@@ -1,8 +1,8 @@
-EE_ELF = $(EE_BIN_DIR)main-pal.elf
-EE_BIN = $(EE_BIN_DIR)main-pal.bin
-PATCH_BIN_DIR = $(EE_BIN_DIR)Gladiator/
+REGION_DIR = Gladiator/
+EE_ELF = main-pal.elf
+EE_BIN = main-pal.bin
 PATCH_TEMPLATE = template/patch-template-gladiator.bin
 
-EE_DEFS = -DPAL
+EE_DEFS = -DGLADIATOR
 
-include ./Makefile.defs
+include Makefile.defs

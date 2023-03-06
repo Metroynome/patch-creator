@@ -1,8 +1,8 @@
-EE_ELF = $(EE_BIN_DIR)main-ntsc.elf
-EE_BIN = $(EE_BIN_DIR)main-ntsc.bin
-PATCH_BIN_DIR = $(EE_BIN_DIR)Deadlocked/
+REGION_DIR = Deadlocked/
+EE_ELF = main-ntsc.elf
+EE_BIN = main-ntsc.bin
 PATCH_TEMPLATE = template/patch-template-deadlocked.bin
 
-EE_DEFS = -DNTSC
+EE_DEFS = -DDEADLOCKED
 
 include Makefile.defs
