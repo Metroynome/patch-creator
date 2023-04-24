@@ -3,6 +3,6 @@ EE_ELF = main-proto.elf
 EE_BIN = main-proto.bin
 PATCH_TEMPLATE = template/patch-template-proto.bin
 
-EE_DEFS = -DPROTOTYPE
+EE_DEFS = -DPROTOTYPE -DPROTO
 
 include Makefile.defs
