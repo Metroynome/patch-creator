@@ -3,6 +3,6 @@ EE_ELF = main-ntscu.elf
 EE_BIN = main-ntscu.bin
 PATCH_TEMPLATE = template/patch-template-deadlocked.bin
 
-EE_DEFS = -DNTSC_U -DDEADLOCKED
+EE_DEFS = -DNTSC_U -DDEADLOCKED -DAMERICA -DAMERICAN
 
 include Makefile.defs

@@ -1,0 +1,8 @@
+REGION_DIR = Korean/
+EE_ELF = main-korean.elf
+EE_BIN = main-korean.bin
+PATCH_TEMPLATE = template/patch-template-ntscj.bin
+
+EE_DEFS = -DNTSC_K -DWRENCHCHAMP -DKOREA -DKOREAN
+
+include Makefile.defs

@@ -3,6 +3,6 @@ EE_ELF = main-pal.elf
 EE_BIN = main-pal.bin
 PATCH_TEMPLATE = template/patch-template-gladiator.bin
 
-EE_DEFS = -DPAL -DGLADIATOR
+EE_DEFS = -DPAL -DGLADIATOR -DEUROPE -DEUROPEAN
 
 include Makefile.defs

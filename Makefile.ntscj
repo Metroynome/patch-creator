@@ -3,6 +3,6 @@ EE_ELF = main-ntscj.elf
 EE_BIN = main-ntscj.bin
 PATCH_TEMPLATE = template/patch-template-ntscj.bin
 
-EE_DEFS = -DNTSC_J -DGIRIGIRI
+EE_DEFS = -DNTSC_J -DGIRIGIRI -DJAPAN -DJAPANESE
 
 include Makefile.defs
