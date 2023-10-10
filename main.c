@@ -11,15 +11,15 @@
 #endif
 
 #if DEADLOCKED // Can also use: NTSC_U, AMERICA, AMERICAN
-#define FRAMELIMITER (*(u32*)0x0021DF60)
+#define FRAMELIMITER (0x0021DF60)
 #elif GLADIATOR // Can also use: PAL, EUROPE, EUROPEAN
-#define FRAMELIMITER (*(u32*)0x0021DFE8)
+#define FRAMELIMITER (0x0021DFE8)
 #elif PROTOTYPE // Can also use: PROTO
-#define FRAMELIMITER (*(u32*)0x0021E160)
+#define FRAMELIMITER (0x0021E160)
 #elif WRENCHCHAMP // Can also use: NTSC_K, KOREAN, KOREA
 #define FRAMELIMITER (0)
 #elif GIRIGIRI // Can also use: NTSC_J, JAPAN, JAPANESE
-#define FRAMELIMITER (*(u32*)0x00238768)
+#define FRAMELIMITER (0x00238768)
 #endif
 
 int main(void)
@@ -32,8 +32,8 @@ int main(void)
 		*(u8*)DNAS_BYPASS = 5;
 
 	// Disable Framelimiter
-	if (FRAMELIMITER && FRAMELIMITER == 0x1e)
-		FRAMELIMITER = 0x3c;
+	if (FRAMELIMITER && *(u32*)FRAMELIMITER == 0x1e)
+		*(u32*)FRAMELIMITER = 0x3c;
 
 	return 0;
 }

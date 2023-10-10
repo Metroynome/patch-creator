@@ -7,12 +7,15 @@ all:
 	$(MAKE) -f ./Makefile.proto
 	$(MAKE) -f ./Makefile.ntscj clean
 	$(MAKE) -f ./Makefile.ntscj
+	$(MAKE) -f ./Makefile.korean clean
+	$(MAKE) -f ./Makefile.korean
 	
 clean:
 	$(MAKE) -f ./Makefile.ntscu clean
 	$(MAKE) -f ./Makefile.pal clean
 	$(MAKE) -f ./Makefile.proto clean
 	$(MAKE) -f ./Makefile.ntscj clean
+	$(MAKE) -f ./Makefile.korean clean
 	rm -f *.bin *.elf *.o
 	rm -f -r bin/
 	rm -f -r obj/
