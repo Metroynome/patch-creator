@@ -1,0 +1,8 @@
+REGION_DIR = NTSC-U_Proto/
+EE_ELF = main-ntscu-proto.elf
+EE_BIN = main-ntscu-proto.bin
+PATCH_TEMPLATE = template/patch-template-ntscu-proto.bin
+
+EE_DEFS = -DNTSC_U_PROTO -DNTSC_U_PROTOTYPE
+
+include Makefile.defs

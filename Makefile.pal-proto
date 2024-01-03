@@ -1,0 +1,8 @@
+REGION_DIR = PAL_Proto/
+EE_ELF = main-pal-proto.elf
+EE_BIN = main-pal-proto.bin
+PATCH_TEMPLATE = template/patch-template-pal-proto.bin
+
+EE_DEFS = -DPAL_PROTO -DPAL_PROTOTYPE
+
+include Makefile.defs

@@ -1,6 +1,8 @@
 # patch-creator
 Takes advantage of the patch.bin file from Ratchet: Deadlocked or Ratchet: Gladiator and lets you insert your own code.
 
+NOTE: Even though the PAL Prototype is in here, it doesn't load the patch.bin file when you enter multiplayer.
+
 ## Build with docker
 Clone Repo:
 ```sh
